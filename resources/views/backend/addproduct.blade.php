@@ -41,7 +41,14 @@
                 <textarea name="" class="form-control" rows="4" required="required"></textarea>
                 `
             </div>
-
+            
+            <div class="form-inline">
+                <label for="">Tình Trạng</label>
+                <select class="form-control" id="sel1">
+                    <option>Mới</option>
+                    <option>Like New</option>
+                </select>
+            </div>
             <div class="form-group">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
