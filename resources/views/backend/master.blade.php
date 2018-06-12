@@ -4,6 +4,8 @@
   <title>@yield('title')</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -50,7 +52,20 @@
       <h4>Trang Quản Trị</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Trang Chủ</a></li>
-        <li><a href="">Sản Phẩm</a></li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            
+            <span class="nav-link-text">Sản Phẩm</span>
+          </a>
+          <ul class="sidenav-second-level" id="collapseComponents">
+            <li>
+              <a href="{{asset('index.php/admin/product/add')}}">Thêm Sản Phẩm</a>
+            </li>
+            <li>
+              <a href="{{asset('index.php/admin/product')}}">Danh Sách</a>
+            </li>
+          </ul>
+        </li>
         <li><a href="{{asset('index.php/admin/category')}}">Danh Mục</a></li>
       </ul><br>
       <div class="input-group">
