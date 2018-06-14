@@ -32,13 +32,14 @@ class ProductController extends Controller
         $product->prod_slug  = str_slug($request->name);
         $product->img = $filename;
         $product->accessories = $request->accessories;
-        $product->price = format_number($request->price);
+        $product->price = number_format($request->price);
         $product->warranty = $request->warranty;
         $product->promotion = $request->promotion;
         $product->condition = $request->condition; 
         $product->status = $request->status;
         $product->description = $request->description;
         $product->featured = $request->featured;
+        $product->cate_id = $request->cate;     
         $product->save();
 
         // upload ảnh 
