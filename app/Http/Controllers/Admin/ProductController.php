@@ -8,12 +8,17 @@ use App\Http\Requests\AddProductRequest;
 use App\Models\Product;
 //lấy danh mục 
 use App\Models\Category;
+use DB;
 class ProductController extends Controller
 {
 
     public function getProduct()
     {
-        return view('backend.product');
+        // sử dụng thư viện DB để join 2 bảng prod và cate
+        $data['productlist'] = DB::table('vp_products')
+            ->join('vp_categories','vp_products.cate_id','=','vp_categories.id')
+            ->orderBy('cate_id','desc')->get();
+        return view('backend.product',$data);
     }
 
     public function getAddProduct()
@@ -39,7 +44,9 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->description = $request->description;
         $product->featured = $request->featured;
-        $product->cate_id = $request->cate;     
+        $product->cate_id = $request->cate;  
+        // dẫn ảnh vào thư mục trong phần strorage   
+        $request->img->storeAs('avatar',$filename);
         $product->save();
 
         // upload ảnh 

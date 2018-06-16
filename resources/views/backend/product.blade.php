@@ -19,14 +19,16 @@
               </tr>
           </thead>
           <tbody>
+          
+          @foreach($productlist as $product)
               <tr>
-                  <td>Iphone</td>
-                  <td><?= number_format('10000000') ?></td>
-                  <td>Hình Ảnh</td>
-                  <td>Iphone</td>
+                  <td>{{$product->prod_name}}</td>
+                  <td>{{number_format($product->price)}}</td>
+                  <td><img src="{{asset('storage/app/avatar/'.$product->img)}}" width="40" height="30" alt="" srcset=""></td>
                   <td><a href="">Sửa <span class="glyphicon glyphicon-pencil"></span> </a></td>
                   <td><a href="">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
               </tr>
+              @endforeach
           </tbody>
       </table>
       
