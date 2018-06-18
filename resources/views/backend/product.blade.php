@@ -24,7 +24,7 @@
               <tr>
                   <td>{{$product->prod_name}}</td>
                   <td>{{number_format($product->price)}}</td>
-                  <td><img src="{{asset('storage/app/avatar/'.$product->img)}}" width="40" height="30" alt="" srcset=""></td>
+                  <td><img src="{{asset('storage/'.$product->img)}}" width="40" height="30" alt="" srcset=""></td>
                   <td><a href="">Sửa <span class="glyphicon glyphicon-pencil"></span> </a></td>
                   <td><a href="">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
               </tr>

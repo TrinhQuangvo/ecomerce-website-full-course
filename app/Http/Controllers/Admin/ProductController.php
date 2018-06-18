@@ -37,7 +37,7 @@ class ProductController extends Controller
         $product->prod_slug  = str_slug($request->name);
         $product->img = $filename;
         $product->accessories = $request->accessories;
-        $product->price = number_format($request->price);
+        $product->price = $request->price;
         $product->warranty = $request->warranty;
         $product->promotion = $request->promotion;
         $product->condition = $request->condition; 
@@ -46,11 +46,9 @@ class ProductController extends Controller
         $product->featured = $request->featured;
         $product->cate_id = $request->cate;  
         // dẫn ảnh vào thư mục trong phần strorage   
-        $request->img->storeAs('avatar',$filename);
         $product->save();
-
-        // upload ảnh 
-        $request ->img ->storeAs('avatar',$filename);
+        $request->img->storeAs('public',$filename);
+        return back();
     }
 
     public function getEditProduct()
