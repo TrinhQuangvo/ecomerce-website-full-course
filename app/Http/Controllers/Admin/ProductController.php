@@ -18,7 +18,9 @@ class ProductController extends Controller
         $data['productlist'] = DB::table('vp_categories')
             ->join('vp_products','vp_products.cate_id','=','vp_categories.id')
             ->get();
+            
         return view('backend.product',$data);
+        
     }
 
     public function getAddProduct()
@@ -64,7 +66,6 @@ class ProductController extends Controller
         // đưa thông tin vào 1 mảng 
         $arr['prod_name']=$request->name;
         $arr['price']=$request->price;
-        $arr['slug']=str_slug($request->name);
         $arr['accessories']=$request->accessories;
         $arr['promotion']=$request->promotion;
         $arr['warranty']=$request->warranty;
@@ -72,7 +73,7 @@ class ProductController extends Controller
         $arr['status']=$request->status;
         $arr['promotion']=$request->promotion;
         $arr['description']=$request->description;
-        $arr['cate_id'] = $request->cate_id;
+        $arr['cate_id'] = $request->cate;
         $arr['featured'] = $request->featured;
         if($request->hasFile('img'))
         {
@@ -83,7 +84,8 @@ class ProductController extends Controller
         
         
         $product::where('id',$id)->update($arr);
-        return redirect('index.php/admin/product');
+        
+        return redirect('admin/product');
     }
 
     public function getDeleteProduct($id)
