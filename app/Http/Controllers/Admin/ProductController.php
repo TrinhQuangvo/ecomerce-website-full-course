@@ -15,9 +15,9 @@ class ProductController extends Controller
     public function getProduct()
     {
         // sử dụng thư viện DB để join 2 bảng prod và cate
-        $data['productlist'] = DB::table('vp_products')
-            ->join('vp_categories','vp_products.cate_id','=','vp_categories.id')
-            ->orderBy('cate_id','desc')->get();
+        $data['productlist'] = DB::table('vp_categories')
+            ->join('vp_products','vp_products.cate_id','=','vp_categories.id')
+            ->get();
         return view('backend.product',$data);
     }
 
@@ -62,8 +62,9 @@ class ProductController extends Controller
         
     }
 
-    public function getDeleteProduct()
+    public function getDeleteProduct($id)
     {
-         
+        product::destroy($id);
+        return back();
     }
 }
