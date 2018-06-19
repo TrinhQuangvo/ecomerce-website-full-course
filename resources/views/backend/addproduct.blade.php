@@ -14,9 +14,9 @@
                 <label  style="margin-left:175px" for="cate">Danh Mục</label><br>
                 <input type="text" class="form-control" name="name">
                 <input type="text" class="form-control" name="price">
-                <select name="cate" class="form-control" id="">
+                <select  name="cate" class="form-control" id="">
                     @foreach($catelist as $cate)
-                    <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+                    <option  value="{{$cate->id}}"  >{{$cate->cate_name}}</option>
                     @endforeach
                 </select>
             </div>

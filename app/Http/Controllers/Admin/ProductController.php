@@ -77,14 +77,11 @@ class ProductController extends Controller
         $arr['featured'] = $request->featured;
         if($request->hasFile('img'))
         {
-            $img = $request->img->getClientOginalName();
+            $img = $request->img->getClientOriginalName();
             $arr['img']= $img;
-            $request->img->storeAs('public/storage'.$img);
+            $request->img->move('avatar'.$img);
         }
-        
-        
-        $product::where('id',$id)->update($arr);
-        
+        $product::where('id',$id)->update($arr); 
         return redirect('admin/product');
     }
 

@@ -16,7 +16,7 @@
                 <input type="text" value="{{$product->price}}" class="form-control" name="price">
                 <select style="margin-left:20px" name="cate" class="form-control" id="">
                     @foreach($listcate as $cate)
-                        <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+                        <option value="{{$cate->id}}" @if($product->cate_id == $cate->id) checked @endif >{{$cate->cate_name}}</option>
                     @endforeach
                 </select>
             </div>
