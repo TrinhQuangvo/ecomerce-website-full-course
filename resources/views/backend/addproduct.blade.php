@@ -45,9 +45,9 @@
             <div class="form-block" style="margin-top:30px">
                 <label for="">Mô Tả</label>
                 <textarea class="form-control" name="description"></textarea>
-                <!-- <script>
+                <script>
                     CKEDITOR.replace( 'description' );
-                </script> -->
+                </script>
             </div>
             
             

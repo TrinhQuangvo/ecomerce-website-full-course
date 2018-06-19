@@ -14,8 +14,10 @@
                 <label  style="margin-left:175px" for="">Danh Mục</label><br>
                 <input type="text" value="{{$product->prod_name}}" class="form-control" name="name">
                 <input type="text" value="{{$product->price}}" class="form-control" name="price">
-                <select name="" class="form-control" id="">
-
+                <select style="margin-left:20px" name="" class="form-control" id="">
+                    @foreach($listcate as $cate)
+                        <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-inline" style="margin-top:30px">
@@ -43,25 +45,25 @@
             <div class="form-block" style="margin-top:30px">
                 <label for="">Mô Tả</label>
                 <textarea class="form-control" name="description">{{$product->description}}</textarea>
-                <!-- <script>
+                <script>
                     CKEDITOR.replace( 'description' );
-                </script> -->
+                </script>
             </div>
             
             
-            <div class="form-inline">
+            <div style="margin-top:20px" class="form-inline">
                 <label for="">Tình Trạng</label>
                 <label style="margin-left:90px" for="">Bảo Hành</label>
                 <label style="margin-left:175px" for="">Phụ Kiện</label>
                 <br>
                 <select class="form-control" name="condition" id="sel1">
-                    <option value="0" @if($product->condition == 0) checked() @endif>Mới</option>
-                    <option value="1" @if($product->condition == 1) checked() @endif>Like New</option>
+                    <option value="0" @if($product->condition == 0) checked @endif>Mới</option>
+                    <option value="1" @if($product->condition == 1) checked @endif>Like New</option>
                 </select>
                 <input style="margin-left:55px" class="form-control"  value="{{$product->warranty}}" type="text" value="12 Tháng Trên Toàn Quốc" name="warranty" id="">
                 <select style="margin-left:35px" class="form-control" value="{{$product->accessories}}"  name="accessories">
-                    <option value="0" @if($product->accessories == 0) checked()@endif >Cable , Sạc ,Tai Nghe</option>
-                    <option value="1" @if($product->accessories == 1) checked()@endif >Cable , Sạc</option>
+                    <option value="0" @if($product->accessories == 0) checked @endif >Cable , Sạc ,Tai Nghe</option>
+                    <option value="1" @if($product->accessories == 1) checked @endif >Cable , Sạc</option>
                 </select>
             </div>
             <div style="margin-top:30px" class="form-inline">
@@ -78,8 +80,8 @@
             </div>
             <div style="margin-top:20px" class="form-group">
                 <label for="">Sản Phẩm Nổi Bậc</label><br>
-                Có <input type="radio" value="1" name="featured" @if($product->featured==1) selected() @endif>
-                Không <input type="radio" checked name="featured" value="0" @if($product->featured==0) selected() @endif>
+                Có <input type="radio" value="1" name="featured" @if($product->featured==1) selected @endif>
+                Không <input type="radio" checked name="featured" value="0" @if($product->featured==0) selected @endif>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">SỬA SẢN PHẨM</button>
             {{csrf_field()}}
