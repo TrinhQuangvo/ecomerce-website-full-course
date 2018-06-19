@@ -65,6 +65,7 @@ class ProductController extends Controller
         $product = new Product;
         // đưa thông tin vào 1 mảng 
         $arr['prod_name']=$request->name;
+        $arr['prod_slug']=str_slug($request->name);
         $arr['price']=$request->price;
         $arr['accessories']=$request->accessories;
         $arr['promotion']=$request->promotion;
@@ -79,7 +80,7 @@ class ProductController extends Controller
         {
             $img = $request->img->getClientOriginalName();
             $arr['img']= $img;
-            $request->img->move('avatar'.$img);
+            $request->img->storeAs('public',$img);
         }
         $product::where('id',$id)->update($arr); 
         return redirect('admin/product');
