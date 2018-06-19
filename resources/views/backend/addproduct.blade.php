@@ -80,7 +80,7 @@
             </div>
             <div style="margin-top:20px" class="form-group">
                 <label for="">Sản Phẩm Nổi Bậc</label><br>
-                Có <input type="radio" name="featured" id="">
+                Có <input type="radio" value="1" name="featured" id="">
                 Không <input type="radio" checked name="featured" value="0" id="">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Tạo Mới</button>

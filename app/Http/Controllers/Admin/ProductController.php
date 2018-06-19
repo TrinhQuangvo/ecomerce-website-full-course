@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddProductRequest;
 use App\Models\Product;
 //lấy danh mục 
 use App\Models\Category;
-use DB;
 class ProductController extends Controller
 {
 
@@ -51,9 +51,10 @@ class ProductController extends Controller
         return back();
     }
 
-    public function getEditProduct()
+    public function getEditProduct($id)
     {
-        return view('backend.editproduct');
+        $data ['product'] = Product::find($id);
+        return view('backend.editproduct',$data);
     }
 
     public function postEditProduct()
