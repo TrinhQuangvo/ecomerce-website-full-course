@@ -72,8 +72,8 @@
                 <br>
                 <input type="text" class="form-control" name="promotion" value="Miếng Dán Cường Lực" id="">
                 <select style="margin-left:35px" class="form-control" name="status">
-                    <option value="1">Chưa Có Hàng</option>
                     <option value="2">Mới về</option>
+                    <option value="1">Chưa Có Hàng</option>
                     <option value="3">Tạm Hết Hàng</option>
                     <option value="4">Ngừng Kinh Doanh</option>
                 </select>
