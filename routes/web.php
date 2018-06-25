@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/','FrontendController@getHome');
 
 Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function(){
