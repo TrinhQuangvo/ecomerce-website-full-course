@@ -206,7 +206,7 @@
             <div class="col-md-9" style="padding-top:75px">
                 <h3>Sản Phẩm Đặc Biệt</h3>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" style="padding-top:70px">
                 <!-- Controls -->
                 <div class="controls pull-right hidden-xs">
                     <a class="glyphicon glyphicon-chevron-left btn btn-success" href="#carousel-example"
@@ -470,9 +470,9 @@
             </div>
             <div class="col-md-3">
                 <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example-generic" data-slide="prev"></a>
-                    <a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example-generic" data-slide="next"></a>
+                <div class="controls pull-right hidden-xs" style="padding-top:40px">
+                    <a class="glyphicon glyphicon-chevron-left btn btn-success" href="#carousel-example-generic" data-slide="prev"></a>
+                    <a class="glyphicon glyphicon-chevron-right btn btn-success" href="#carousel-example-generic" data-slide="next"></a>
                 </div>
             </div>
         </div>
