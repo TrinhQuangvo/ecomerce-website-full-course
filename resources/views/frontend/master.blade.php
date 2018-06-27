@@ -112,6 +112,11 @@
         {
         margin-right: 10px;
         }
+        a {
+            color: #fff;
+            font-size:14px;
+            text-decoration:none;
+        }
     </style>
     <body>
         <!-- Navigator -->
@@ -124,7 +129,7 @@
                     <span class="icon-bar"></span>   
                     <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="index.html">HUEICSTORE&trade;</a>
+                    <a class="navbar-brand" href="{{asset('index.php')}}">HUEICSTORE&trade;</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav ">

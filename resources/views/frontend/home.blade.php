@@ -21,7 +21,7 @@
                             <div class="panel-body"><img src="{{asset('storage/'.$item->img)}}" class="photo img-responsive" style="height:180px" alt="Image"></div>
                             <div class="panel-footer">
                                 <h3>Giá : {{number_format($item->price)}}</h3>
-                                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-{{$item->id}}">Detail</button>
+                                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-{{$item->id}}"><a  href="{{asset("index.php/detail/".$item->id)}}">Chi Tiết Sản Phẩm</a></button>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                 <div class="panel-body"><img src="{{asset('storage/'.$new_item->img)}}" class="photo img-responsive" style="height:180px" alt="Image"></div>
                 <div class="panel-footer">
                     <h3 style="color:#9b321a"><b>Giá : {{number_format($new_item->price)}}</b> </h3>
-                    <button  type="button" class="btn btn-sm btn-success">Chi Tiết Sản Phẩm</button>
+                    <button type="button" class="btn btn-sm btn-success"><a  href="{{asset("index.php/detail/".$new_item->id)}}">Chi Tiết Sản Phẩm</a></button>
                 </div>
             </div>
         </div>
