@@ -28,7 +28,7 @@
               </tr>
             @endforeach     
           </tbody>
-        {{ $productlist->links()}}
+        {{$productlist->links()}}
       </table>
       
       <br><br>
