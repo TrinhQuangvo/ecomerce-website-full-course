@@ -68,7 +68,7 @@
         margin: 0 auto;
         }
         .photo:hover {
-        transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
         .col-item .separator
         {
@@ -134,12 +134,12 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav ">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sản Phẩm
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Danh Mục
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="sanpham/laptop.html">LAPTOP</a></li>
-                                <li><a href="sanpham/phone.html">SMARTPHONE</a></li>
-                                <li><a href="sanpham/tablet.html">TABLET</a></li>
+                            @foreach($category as $cate)
+                                <li><a href="{{asset('index.php/category/'.$cate->id.'/'.$cate->cate_slug.'.html')}}">{{$cate->cate_name}}</a></li>
+                            @endforeach
                             </ul>
                         </li>
                         <li><a href="https://www.facebook.com/profile.php?id=100015064840773">LIÊN HỆ</a></li>
