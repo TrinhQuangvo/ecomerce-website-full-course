@@ -27,4 +27,13 @@ class FrontendController extends Controller
         $data['item'] = Product::where('cate_id',$id)->orderBy('cate_id','desc')->paginate(8);
         return view('Frontend.category',$data); 
     }
+
+    public function getResult(Request $req)
+    {
+        $result = $req->result;
+        $data['keyword']=$result;
+        $result = str_replace(' ','%',$result);
+        $data['items']=Product::where('prod_name','like','%'.$result.'%')->get();
+        return view('frontend.search',$data);
+    }
 }

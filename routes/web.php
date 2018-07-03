@@ -17,6 +17,8 @@ Route::get('detail/{id}/{slug}.html','FrontendController@getDetails');
 
 Route::get('category/{id}/{slug}.html','FrontendController@getCategory');
 
+Route::get('search','FrontendController@getResult');
+
 Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function(){
         Route::get('/','LoginController@getLogin');
