@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-sm-4">
       <img class="photo img-responsive" style="padding:30px" src="{{asset("storage/$item->img")}}" width="300" height="370" alt="">
-      <button style="text-align:center" class="btn btn-block btn-success glyphicon glyphicon-shopping-cart text-center"> BUY NOW !! </button><br>
+      <a style="color:#FFF" href="{{asset('index.php/cart/add/'.$item->id)}}"><button  style="text-align:center; font-wieght:bold" class="btn btn-block btn-success glyphicon glyphicon-shopping-cart text-center" > Thêm Vào Giỏ Hàng</button></a><br>
     </div>
     
     <div class="col-sm-7">
