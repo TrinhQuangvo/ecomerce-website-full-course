@@ -11,6 +11,10 @@
         <title>@yield('title')</title>
     </head>
     <style>
+        body{
+            font-weight:bold;
+            background-color:#fefee7;
+        }
         .col-item
         {
         border: 1px solid #E1E1E1;
@@ -121,7 +125,7 @@
     <body>
         <!-- Navigator -->
         <!-- menu trái -->
-        <nav class="navbar navbar-fixed-top navbar-default ">
+        <nav class="navbar navbar-fixed-top navbar-inverse" style="color:#6e7177">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -143,11 +147,12 @@
                             </ul>
                         </li>
                         <li><a href="https://www.facebook.com/profile.php?id=100015064840773">LIÊN HỆ</a></li>
-                        <li><a href="#">BIG DEALS</a></li>
+                        <button  class="btn btn-danger navbar-btn"><li><span class="glyphicon glyphicon-shopping-cart"></span>
+                        <a style="color:#fff;font-weight:bold" href="{{asset('index.php/cart/show')}}"> Shopping Cart ({{Cart::count()}})</a></li></button>
                     </ul>
                     <!-- menu phải  -->
                     <ul class="nav navbar-nav navbar-right">
-                        <button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">
+                        <button  class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">
                             <li>Đăng Nhập</li>
                         </button>
                         <form class="navbar-form navbar-right" role="search" method="get" action="{{asset('index.php/search/')}}">

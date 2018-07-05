@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products;
+use App\Models\Product;
 use Cart; 
 
 class CartController extends Controller
@@ -13,11 +13,14 @@ class CartController extends Controller
         $product = Product::find($id);
         Cart::add(['id' => $id, 'name' => $product->prod_name, 'qty' => 1,
          'price' => $product->price, 'options' => ['img' => $product->img]]);
+        
         return redirect('cart/show');
     }
 
     public function getShowCart()
     {
-        return view('frontend.cart');
+        $data['total'] = Cart::total();
+        $data['item'] = Cart::content();
+        return view('frontend.cart',$data);
     }
 }
