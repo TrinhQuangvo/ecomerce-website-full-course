@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Cart; 
+use Mail;
 
 class CartController extends Controller
 {
@@ -37,5 +38,10 @@ class CartController extends Controller
     public function getUpdateCart(Request $req)
     {
         Cart::update($req->rowId,$req->qty);
+    } 
+
+    public function postComplete(Request $req)
+    {
+
     }
 }

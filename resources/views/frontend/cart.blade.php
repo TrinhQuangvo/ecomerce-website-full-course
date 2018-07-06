@@ -44,7 +44,7 @@
                     </div></td>
                     <td>{{number_format($items->price)}} VNĐ</td>
                     <td>{{number_format($items->price*$items->qty)}}</td>
-                    <td><a href="{{asset('index.php/cart/delete/'.$items->rowId)}}" style="color:#000" > <span class="glyphicon glyphicon-remove-sign"></span> Xóa </a></td>
+                    <td><a href="{{asset('index.php/cart/delete/'.$items->rowId)}}" class="btn btn-danger"   > <span class="glyphicon glyphicon-remove-sign"></span> Xóa </a></td>
                 </tr>
                 @endforeach
             </tbody>
