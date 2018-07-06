@@ -22,6 +22,8 @@ Route::get('search','FrontendController@getResult');
 Route::group(['prefix'=>'cart'],function(){
     Route::get('add/{id}','CartController@getAddCart');
     Route::get('show','CartController@getShowCart');
+    Route::get('delete/{id}','CartController@getDelete');
+    Route::get('update','CartController@GetUpdateCart');
 });
 
 Route::group(['namespace'=>'Admin'],function(){
