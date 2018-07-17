@@ -13,6 +13,16 @@
             }
         );
     }
+    function deleleProd(rowId)
+    {
+        $.get(
+            "{{asset('index.php/product/delete')}}",
+            {rowId:rowId} ,
+            function(){
+                location.reload();
+            }
+        );
+    }
 </script>
 
 <div class="container">
@@ -44,7 +54,10 @@
                     </div></td>
                     <td>{{number_format($items->price)}} VNĐ</td>
                     <td>{{number_format($items->price*$items->qty)}}</td>
-                    <td><a href="{{asset('index.php/cart/delete/'.$items->rowId)}}" class="btn btn-danger"   > <span class="glyphicon glyphicon-remove-sign"></span> Xóa </a></td>
+                    <td><a onchange="deleteProd(
+                            this.value,'{{$item->id}}'
+                        )" 
+                    href="{{asset('index.php/cart/delete/'.$items->rowId)}}" class="btn btn-danger"   > <span class="glyphicon glyphicon-remove-sign"></span> Xóa </a></td>
                 </tr>
                 @endforeach
             </tbody>
@@ -65,29 +78,33 @@
                     <div class="form-inline">
                         <label for="">Họ Tên</label>
                         <label for="" style="padding-left:170px">SĐT Liên Lạc</label><br>
-                        <input type="text" class="form-control" id="" placeholder="">
-                        <input type="number" class="form-control" name="" placeholder="Sđt của bạn" id="">
+                        <input type="text" class="form-control" id="" name="name" placeholder="">
+                        <input type="number" class="form-control" name="tel" placeholder="Sđt của bạn" id="">
                     </div>
 
                     <div class="form-group">
-                        <label for="">Địa Chỉ Liên Lạc</label>
-                        <input type="text" class="form-control" name="address" id="" placeholder="Vui Lòng Ghi Rõ Phường Xã">
+                        <label for="">Địa Chỉ Email</label>
+                        <input type="email" class="form-control" name="email" id="" >
                     </div>
                     
                     <div class="form-group">
+                            <label for="">Địa Chỉ</label>
+                            <input type="text" placeholder="Vui Lòng Ghi Rõ Phường Xã" name="email" class="form-control" id="">
+                    </div>
+                    <div class="form-group">
                        <label for="">Yêu Cầu Khi Giao Hàng</label>
-                       <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea>
+                       <textarea name="request" id="" class="form-control" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="form-inline">
                         <label for="">Phương Thức Thanh Toán : </label>
-                        <select name="" id="" class="form-control">
+                        <select name="paid" id="" class="form-control">
                             <option  value="1">Cash On Deliver (COD) </option>
                             <option  value="2">Internet Banking</option>
                         </select>
                     </div>
 
-                    
+                    {{csrf_field()}}
                     <button type="submit" class="btn btn-success btn-lg " style="margin-left:600px;margin-top:50px">Xác Nhận Mua Hàng <span class="glyphicon glyphicon-ok"></span></button>
                 </form>
             @else

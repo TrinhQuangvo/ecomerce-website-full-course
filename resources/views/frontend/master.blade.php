@@ -133,7 +133,7 @@
                     <span class="icon-bar"></span>   
                     <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="{{asset('index.php')}}">HUEICSTORE&trade;</a>
+                    <a class="navbar-brand" href="{{route('trang-chu')}}">HUEICSTORE&trade;</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav ">

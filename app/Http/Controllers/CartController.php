@@ -42,6 +42,12 @@ class CartController extends Controller
 
     public function postComplete(Request $req)
     {
-
+        $data['info'] = $req->all();
+        Mail::send('fronend.email',$data,function($message) use ($email){
+            $message->from('voquang1406@gmail.com','Trịnh Quang Võ');
+            $message->to($email,$email);
+            $message->cc('Trịnh Quang','ahihi');
+            $message->subject('Xác Nhận Hóa Đơn Mua Hàng');
+        });
     }
 }

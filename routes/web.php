@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','FrontendController@getHome');
+Route::get('/','FrontendController@getHome')->name('trang-chu');
 
 Route::get('detail/{id}/{slug}.html','FrontendController@getDetails');
 
