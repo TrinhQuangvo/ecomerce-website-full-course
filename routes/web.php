@@ -27,6 +27,8 @@ Route::group(['prefix'=>'cart'],function(){
     Route::post('show','CartController@postComplete');
 });
 
+Route::resource('api/item','ItemController');
+
 Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function(){
         Route::get('/','LoginController@getLogin');

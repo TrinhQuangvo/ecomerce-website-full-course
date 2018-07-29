@@ -2,6 +2,17 @@
 @section('main')
 @section('title','Categories')
 <div class="col-sm-9">
+      <script>
+        function del()
+        {
+          $.ajax({
+            url: 'http://localhost/mylaravel/public/index.php/admin/category/delete/',
+            type:'POST',
+            
+
+          });
+        }
+      </script>
       <h2><legend>Thêm Danh Mục</legend></h2>
       
       <form action="" method="POST" class="form" role="form">
@@ -34,7 +45,7 @@
       <tr>
         <td>{{$cate->cate_name}}</td>
         <td><a href="{{asset('index.php/admin/category/edit/'.$cate->id)}}">Sửa <span class="glyphicon glyphicon-pencil"></span> </a></td>
-        <td><a href="{{asset('index.php/admin/category/delete/'.$cate->id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a onclick="del" href="{{asset('index.php/admin/category/delete/'.$cate->id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
       </tr>
        @endforeach
     </tbody>

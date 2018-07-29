@@ -1,29 +1,6 @@
 @extends('frontend.master')
 @section('title','Giỏ Hàng')
 @section('main')
-<script>
-    function updateCart(qty,rowId)
-    {
-        $.get(
-            // url , đối tượng , phương thức 
-            '{{asset('index.php/cart/update')}}',
-            {qty:qty,rowId:rowId},
-            function(){
-                location.reload();
-            }
-        );
-    }
-    function deleleProd(rowId)
-    {
-        $.get(
-            "{{asset('index.php/product/delete')}}",
-            {rowId:rowId} ,
-            function(){
-                location.reload();
-            }
-        );
-    }
-</script>
 
 <div class="container">
     <div class="row">
