@@ -14,8 +14,8 @@ class VpCategories extends Migration
     public function up()
     {
         Schema::create('vp_categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('cate_name')->unique()   ;
+            $table->increments('cate_id');
+            $table->string('cate_name')->unique();
             $table->string('cate_slug');
             $table->timestamps();
         });
