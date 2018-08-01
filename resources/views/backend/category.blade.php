@@ -1,6 +1,7 @@
 @extends('backend.master')
 @section('main')
 @section('title','Categories')
+
 <div class="col-sm-9">
       <h2><legend>Thêm Danh Mục</legend></h2>
       
@@ -25,20 +26,27 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>#</th>
+        <th>
+          <div class="checkbox">
+            <label>
+                <input id="checkall" type="checkbox" value="">Chọn Hết
+            </label>
+          </div>
+        </th>
         <th class="">Tên</th>
         <th></th>
         <th></th>
+       
       </tr>
     </thead>
     <tbody>
         @foreach($catelist as $cate)
       <tr>
-        <td>
+        <th>
         <div class="checkbox">
-          <label><input type="checkbox" value="{{$cate->id}}" name="del[]"> Chọn </label>
+          <label><input type="checkbox" class="checkitem" value="{{$cate->id}}" name="del[]">Chọn</label>
+        </th>
         </div>
-        </td>
         <td>{{$cate->cate_name}}</td>
         <td><a href="{{asset('index.php/admin/category/edit/'.$cate->id)}}">Sửa <span class="glyphicon glyphicon-pencil"></span> </a></td>
         <td><a onclick="del" href="{{asset('index.php/admin/category/delete/'.$cate->id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
@@ -53,4 +61,10 @@
   </div>
 </div>
 </form>
+
+<script>
+    $("#checkall").change(function(){
+        $("input:checkbox").prop("checked",$(this).prop("checked"))
+    })
+</script>
 @stop
