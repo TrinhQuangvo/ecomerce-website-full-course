@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function getCate()
     {
         // lấy ra danh sách của category trong bảng vp_categỏies
-        $data['catelist'] = Category::all();
+        $data['catelist'] = Category::all();    
         return view('backend.category',$data);
     }
 
@@ -47,6 +47,13 @@ class CategoryController extends Controller
     public function getDeleteCate($id)
     {
         Category::destroy($id);
+        return back();
+    }
+
+    public function del(Request $req)
+    {
+        $del = $req -> input('del');
+        Category::whereIn('id',$del)->delete();
         return back();
     }
 }

@@ -47,8 +47,10 @@ Route::group(['namespace'=>'Admin'],function(){
 
             Route::get('edit/{id}','CategoryController@getEditCate');
             Route::post('edit/{id}','CategoryController@postEditCate'); 
-
+            // this is delete one by one route
             Route::get('delete/{id}','CategoryController@getDeleteCate');
+            //this is delete multiple items route
+            Route::post('del','CategoryController@del');
         });
 
         Route::group(['prefix'=>'product'],function(){
