@@ -17,7 +17,7 @@
             <div class="panel-heading" style="font-weight:bold"><h3>Chi Tiết</h3></div> <!-- phần mô tả -->
             <div class="panel-body">
                 <ul>
-                    <li><p> Mô Tả : {{$item->description}}</p></li>
+                    <li><p>Mô Tả : {{$item->description}}</p></li>
                     <li><p>Bảo Hành : {{$item->warranty}}</p></li>
                     <li><p>Tình Trạng : {{$item->condition}}</p></li>
                     <li><p>Phụ Kiện : {{$item->accessories}}</p></li>

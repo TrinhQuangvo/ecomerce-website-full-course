@@ -52,6 +52,7 @@
         <td><a onclick="del" href="{{asset('index.php/admin/category/delete/'.$cate->id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
       </tr>
        @endforeach
+       
     </tbody>
     <button type="submit" class="btn btn-warning">Delete Selected</button>
   </table>
