@@ -52,7 +52,7 @@ Route::group(['namespace'=>'Admin'],function(){
             //this is delete multiple items route
             Route::post('del','CategoryController@del');
         });
-
+        
         Route::group(['prefix'=>'product'],function(){
             Route::get('/','ProductController@getProduct');
 
@@ -63,6 +63,9 @@ Route::group(['namespace'=>'Admin'],function(){
             Route::post('edit/{id}','ProductController@postEditProduct'); 
 
             Route::get('delete/{id}','ProductController@getDeleteProduct');
+            Route::get('test', function ($id) {
+                return view('test.test');
+            });
         });
     });
     
