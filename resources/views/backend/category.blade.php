@@ -11,6 +11,7 @@
           <div class="form-group col-xs-4">
               <label class="sr-only" for="">Thêm Mới Danh Mục Sản Phẩm</label>
               <input type="text" name="name" class="form-control" id="">
+              <input type="hidden" name="user" value="{{Auth::user()->email}}">
           </div>
           <input type="submit" name="submit" class="btn btn-success"value="Thêm">
           {{csrf_field()}}

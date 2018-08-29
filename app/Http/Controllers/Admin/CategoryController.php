@@ -24,6 +24,8 @@ class CategoryController extends Controller
         $category = new Category;
         $category->cate_name = $req->name;
         $category->cate_slug = str_slug($req->name);
+        $category->user = $req->user;
+        dd($category);
         $category->save();
         return back();
     }

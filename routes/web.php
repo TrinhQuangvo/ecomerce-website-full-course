@@ -63,9 +63,6 @@ Route::group(['namespace'=>'Admin'],function(){
             Route::post('edit/{id}','ProductController@postEditProduct'); 
 
             Route::get('delete/{id}','ProductController@getDeleteProduct');
-            Route::get('test', function ($id) {
-                return view('test.test');
-            });
         });
     });
     
