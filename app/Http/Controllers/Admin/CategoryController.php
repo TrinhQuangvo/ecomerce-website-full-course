@@ -24,8 +24,6 @@ class CategoryController extends Controller
         $category = new Category;
         $category->cate_name = $req->name;
         $category->cate_slug = str_slug($req->name);
-        $category->user = $req->user;
-        dd($category);
         $category->save();
         return back();
     }
@@ -54,7 +52,7 @@ class CategoryController extends Controller
 
     public function del(Request $req)
     {
-        $del = $req -> input('del');
+        $del = $req->input('del');
         Category::whereIn('id',$del)->delete();
         return back();
     }
