@@ -12,7 +12,7 @@
             @include('errors.note')
               <label class="sr-only" for="">Sửa Danh Mục Sản Phẩm</label>
               <input type="text" name="name" value="{{$cate->cate_name}}" class="form-control" id="">
-          </div>
+          </div> 
           <button type="submit" class="btn btn-success">Sửa</button>
         {{csrf_field()}}
         </form>

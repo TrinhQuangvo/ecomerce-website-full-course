@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table = 'vp_categories';
-    protected $primary_key ='id';
+    protected $primaryKey ='cate_id';
     protected $guard = [];
 }

@@ -23,7 +23,8 @@ class CategoryController extends Controller
         // để thêm dữ liệu sử dụng model 
         $category = new Category;
         $category->cate_name = $req->name;
-        $category->cate_slug = str_slug($req->name);
+        $category->cate_slug = str_slug($req->name);    
+        //dd($category);
         $category->save();
         return back();
     }
@@ -34,7 +35,7 @@ class CategoryController extends Controller
         $data['cate'] = Category::find($id);
         return view('backend.editcategory',$data);
     }
-
+    
     public function postEditCate(EditCateRequest $req,$id)
     {
         $category = Category::find($id);

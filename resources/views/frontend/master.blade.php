@@ -121,6 +121,13 @@
             font-size:14px;
             text-decoration:none;
         }
+        .button_login{
+            margin-top: 6px;
+            font-size: 14px;
+            color:#ffffff;
+            font-weight: 800;
+            border-radius:10px;
+        }
     </style>
     <body>
         <!-- Navigator -->
@@ -133,7 +140,7 @@
                     <span class="icon-bar"></span>   
                     <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="{{route('trang-chu')}}">HUEICSTORE&trade;</a>
+                    <a class="navbar-brand" href="{{route('trang-chu')}}">HCE Store</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav ">
@@ -146,15 +153,13 @@
                             @endforeach
                             </ul>
                         </li>
-                        <li><a href="https://www.facebook.com/profile.php?id=100015064840773">LIÊN HỆ</a></li>
+                        <li><a href="">LIÊN HỆ</a></li>
                         <button  class="btn btn-danger navbar-btn"><li><span class="glyphicon glyphicon-shopping-cart"></span>
                         <a style="color:#fff;font-weight:bold" href="{{asset('index.php/cart/show')}}"> Shopping Cart ({{Cart::count()}})</a></li></button>
                     </ul>
                     <!-- menu phải  -->
                     <ul class="nav navbar-nav navbar-right">
-                        <button  class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">
-                            <li>Đăng Nhập</li>
-                        </button>
+                        <li><a class="button_login" href="/login"> Đăng Nhập </a></li>
                         <form class="navbar-form navbar-right" role="search" method="get" action="{{asset('index.php/search/')}}">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="result" placeholder="Search">

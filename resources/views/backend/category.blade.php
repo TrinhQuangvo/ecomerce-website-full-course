@@ -49,8 +49,8 @@
         </th>
         </div>
         <td>{{$cate->cate_name}}</td>
-        <td><a href="{{asset('index.php/admin/category/edit/'.$cate->id)}}">Sửa <span class="glyphicon glyphicon-pencil"></span> </a></td>
-        <td><a onclick="del" href="{{asset('index.php/admin/category/delete/'.$cate->id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a href="{{asset('index.php/admin/category/edit/'.$cate->cate_id)}}">Sửa  <span class="glyphicon glyphicon-pencil"></span> </a></td>
+        <td><a onclick="del" href="{{asset('index.php/admin/category/delete/'.$cate->cate_id)}}">Xóa  <span class="glyphicon glyphicon-remove"></span></a></td>
       </tr>
        @endforeach
        

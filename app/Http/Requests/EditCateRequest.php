@@ -25,7 +25,7 @@ class EditCateRequest extends FormRequest
     {
         return [
             //$this->segment(4) chỉ vị trí của id trên thanh url
-            'name'=>'unique:vp_categories,cate_name',$this->segment(4).',id'
+            'name'=>'unique:vp_categories,cate_name',$this->segment(4).',cate_id'
         ];
     }
     public function message()
