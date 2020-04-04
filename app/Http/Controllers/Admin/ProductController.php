@@ -17,7 +17,7 @@ class ProductController extends Controller
         // sử dụng thư viện DB để join 2 bảng prod và cate
         
         $data['productlist'] = DB::table('vp_categories')
-            ->join('vp_products','vp_products.cate_id','=','vp_categories.id')->orderBy('cate_name','desc')
+            ->join('vp_products','vp_products.cate_id','=','vp_categories.cate_id')->orderBy('cate_name','desc')
             ->Paginate(10);
         // phân trang 
         return view('backend.product',$data);
